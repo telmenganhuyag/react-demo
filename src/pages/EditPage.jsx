@@ -79,7 +79,7 @@ const EditPage = ({ userInfo, updateUserInfo }) => {
     e.preventDefault();
     console.log("Form submitted with data:", formData);
     updateUserInfo(formData);
-    navigate("/");
+    navigate("/react-demo/");
   };
 
   return (
@@ -359,7 +359,7 @@ const EditPage = ({ userInfo, updateUserInfo }) => {
         >
           Save
         </button>
-        <Link to="/" className="btn btn-primary btn-md btn-wide self-center">
+        <Link to="/react-demo/" className="btn btn-primary btn-md btn-wide self-center">
           Go Back
         </Link>
       </form>

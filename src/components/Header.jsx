@@ -16,7 +16,7 @@ const Header = ({ userInfo }) => {
         <p className="self-center font-light">{userInfo.title}</p>
       </div>
       <div className="self-end ml-16 text-yellow-500">
-        <Link to="/edit">Edit Profile</Link>
+        <Link to="edit">Edit Profile</Link>
       </div>
     </div>
   );
