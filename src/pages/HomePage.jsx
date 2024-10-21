@@ -5,14 +5,15 @@ import Content from "../components/Content";
 import Seperator from "../components/Seperator";
 import GridLayout from "../layouts/GridLayout";
 
-const HomePage = () => {
+const HomePage = ({ userInfo }) => {
+  console.log("HomePage rendered with userInfo:", userInfo)
   return (
     <>
       <GridLayout>
-        <Header />
+        <Header userInfo={userInfo} />
         <Seperator />
-        <Sidebar />
-        <Content />
+        <Sidebar userInfo={userInfo} />
+        <Content userInfo={userInfo} />
       </GridLayout>
     </>
   );

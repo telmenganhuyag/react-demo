@@ -1,6 +1,6 @@
 import React from "react";
 
-const Content = () => {
+const Content = ({ userInfo }) => {
   return (
     <div className="content grid-rows-auto grid gap-4 bg-white pb-24 pt-[260px]">
       {/* Experience Section */}
@@ -8,36 +8,17 @@ const Content = () => {
         <div className="z-20 w-60 rounded-full border-2 border-[#103581] bg-[#103581] px-16 py-1 text-center text-white">
           Experience
         </div>
-        <div className="exp-details pl-2">
-          <h1 className="title font-semibold">Arrowwai Industries</h1>
-          <h1 className="location font-semibold">Sydney - Australia</h1>
-          <h1 className="date mb-1 font-semibold">2020 - 2022</h1>
-          <p className="font-medium">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-            sit amet quam rhoncus, egestas dui eget, malesuada justo. Ut aliquam
-            augue.
-          </p>
-        </div>
-        <div className="exp-details pl-2">
-          <h1 className="title font-semibold">Wardiere Inc.</h1>
-          <h1 className="location font-semibold">Sydney - Australia</h1>
-          <h1 className="date mb-1 font-semibold">2016 - 2020</h1>
-          <p className="font-medium">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-            sit amet quam rhoncus, egestas dui eget, malesuada justo. Ut aliquam
-            augue.
-          </p>
-        </div>
-        <div className="exp-details pl-2">
-          <h1 className="title font-semibold">Studio Showde</h1>
-          <h1 className="location font-semibold">Sydney - Australia</h1>
-          <h1 className="date mb-1 font-semibold">2010 - 2015</h1>
-          <p className="font-medium">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-            sit amet quam rhoncus, egestas dui eget, malesuada justo. Ut aliquam
-            augue.
-          </p>
-        </div>
+        {userInfo.experiences.map((exp, index) => (
+          <div key={index} className="exp-details pl-2">
+            <h1 className="title font-semibold">{exp.company}</h1>
+            <h1 className="location font-semibold">{exp.city} - {exp.country}</h1>
+            <h1 className="date mb-1 font-semibold">{exp.from} - {exp.to}</h1>
+            <p className="font-medium">
+              {/* You can add a description field in the userInfo if needed */}
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+        ))}
       </div>
 
       {/* Education Section */}
@@ -45,16 +26,13 @@ const Content = () => {
         <div className="w-60 rounded-full border-2 border-[#103581] bg-[#103581] px-16 py-1 text-center text-white">
           Education
         </div>
-        <div className="education-details pl-2">
-          <h1 className="title font-semibold">Borcelle University</h1>
-          <p className="font-medium">Bachelor of Business Management</p>
-          <p className="font-medium">2014 - 2023</p>
-        </div>
-        <div className="education-details pl-2">
-          <h1 className="title font-semibold">Borcelle University</h1>
-          <p className="font-medium">Bachelor of Business Management</p>
-          <p className="font-medium">2014 - 2018</p>
-        </div>
+        {userInfo.education.map((edu, index) => (
+          <div key={index} className="education-details pl-2">
+            <h1 className="title font-semibold">{edu.university}</h1>
+            <p className="font-medium">{edu.career}</p>
+            <p className="font-medium">{edu.from} - {edu.to}</p>
+          </div>
+        ))}
       </div>
 
       {/* Skills Section */}
@@ -63,18 +41,14 @@ const Content = () => {
           Skills Summary
         </div>
         <div className="skills-details pl-2">
-          <div className="flex">
-            <p className="mb-3 mr-20 font-medium">Design Process</p>
-            <div className="h-5 w-40 rounded-full text-white bg-blue-600 text-center">
-              78 %
+          {userInfo.skillsSummary.map((skill, index) => (
+            <div className="flex" key={index}>
+              <p className="mb-3 mr-20 font-medium">{skill.skill}</p>
+              <div className="h-5 w-40 rounded-full bg-blue-600 text-center text-white">
+                {skill.level} %
+              </div>
             </div>
-          </div>
-          <div className="flex">
-            <p className="mb-3 mr-8 font-medium">Project Management</p>
-            <div className="h-5 w-40 rounded-full text-white bg-blue-600 text-center">
-              81 %
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>

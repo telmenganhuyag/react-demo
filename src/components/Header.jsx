@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ userInfo }) => {
   return (
     <div className="hero absolute top-16 z-30 flex h-[153px] w-full items-center gap-60 bg-[#103581] shadow-xl">
       <img
@@ -11,13 +11,13 @@ const Header = () => {
       />
       <div className="flex flex-col text-white">
         <div className="text-6xl font-bold uppercase">
-          Richard <br /> &nbsp;&nbsp;&nbsp;&nbsp;Sanchez
+          {userInfo.name.split(" ")[0]} <br /> &nbsp;&nbsp;&nbsp;&nbsp;{userInfo.name.split(" ")[1]}
         </div>
-        <p className="self-center font-light">Product Designer</p>
+        <p className="self-center font-light">{userInfo.title}</p>
       </div>
       <div className="self-end ml-16 text-yellow-500">
-          <Link to="/edit">Edit Profile</Link>
-        </div>
+        <Link to="/edit">Edit Profile</Link>
+      </div>
     </div>
   );
 };
