@@ -1,12 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import profilePic from "../assets/profile-pic.webp";
 
 const Header = ({ userInfo }) => {
   return (
     <div className="hero absolute top-16 z-30 flex h-[153px] w-full items-center gap-60 bg-[#103581] shadow-xl">
       <img
-        src={profilePic}
+        src={userInfo.profilePicUrl}      
         alt="profile-pic"
         className="ml-40 h-52 w-52 rounded-full border-4 border-[#104181] object-cover"
       />

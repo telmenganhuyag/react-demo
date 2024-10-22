@@ -13,6 +13,7 @@ const App = () => {
   const [userInfo, setUserInfo] = useState({
     name: "Richard Sanchez",
     title: "Product Designer",
+    profilePicUrl: "/react-demo/profile-pic.webp",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     phoneNumber: "+123-456-7890",
     email: "hello@reallygreatsite.com",
